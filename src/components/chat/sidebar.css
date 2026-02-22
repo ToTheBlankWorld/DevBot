@@ -1,0 +1,239 @@
+html,
+body {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.sidebar-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background-color: #ff003c;
+  z-index: 50;
+}
+
+.sidebar-container .burger {
+  position: absolute;
+  left: calc(50% - 12.5px);
+  top: 30px;
+  width: 25px;
+  height: 30px;
+}
+
+.sidebar-container .burger span {
+  position: absolute;
+  left: 0;
+  display: block;
+  height: 1px;
+  transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background-color: white;
+}
+
+.sidebar-container .burger span:nth-child(1) {
+  top: 0;
+  width: 20px;
+}
+
+.sidebar-container .burger span:nth-child(2) {
+  top: 6px;
+  width: 100%;
+}
+
+.sidebar-container .burger span:nth-child(3) {
+  top: 12px;
+  width: 17px;
+}
+
+.sidebar-container:hover {
+  width: 70px;
+}
+
+.sidebar-container:hover .burger span {
+  width: 100%;
+}
+
+.red-layer,
+.black-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  width: 0;
+  height: 100%;
+  margin: 0;
+  z-index: 40;
+}
+
+.red-layer {
+  background-color: #ff003c;
+}
+
+.red-open {
+  transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.red-close {
+  transition: 0.6s 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.black-layer {
+  z-index: 101;
+  background-color: #1e1e1e;
+}
+
+.black-layer .close-btn {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  width: 25px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.black-layer .close-btn span {
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: #ff003c;
+}
+
+.black-layer .close-btn span:nth-child(1) {
+  top: 50%;
+  transition: 0.3s 0.6s ease-in-out;
+  transform: rotate(45deg);
+}
+
+.black-layer .close-btn span:nth-child(2) {
+  top: 50%;
+  transition: 0.4s 0.6s ease-in-out;
+  transform: rotate(-45deg);
+}
+
+.black-layer .close-btn .animate-close-btn {
+  width: 100%;
+}
+
+.black-layer .close-btn .animate-close-btn:nth-child(1) {
+  transition: 0.3s ease-in-out;
+}
+
+.black-layer .close-btn .animate-close-btn:nth-child(2) {
+  transition: 0.4s ease-in-out;
+}
+
+.black-layer .close-btn:hover span {
+  background-color: #f8f8f8 !important;
+}
+
+.black-layer .menu-container {
+  position: absolute;
+  top: 15%;
+  left: -10%;
+  visibility: hidden;
+  width: 80%;
+  height: 50%;
+  transition: 0.5s 0.1s ease-in-out;
+  opacity: 0;
+}
+
+.black-layer .menu-container h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 2em;
+  width: 400px;
+  cursor: pointer;
+  transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: #22d3a7;
+  margin: 0;
+}
+
+.black-layer .menu-container h1:hover {
+  padding-left: 30px;
+  color: #f8f8f8;
+}
+
+.black-layer .menu-container ul {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5em;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.black-layer .menu-container ul li {
+  line-height: 40px;
+  cursor: pointer;
+  transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.black-layer .menu-container ul li a {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #ff003c;
+  display: block;
+}
+
+.black-layer .menu-container ul li a::before {
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  width: 0;
+  height: 3px;
+  content: "";
+  transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background-color: #ff003c;
+}
+
+.black-layer .menu-container ul li:hover {
+  padding-left: 20px;
+}
+
+.black-layer .menu-container ul li:hover a {
+  color: #f8f8f8;
+}
+
+.black-layer .menu-container ul li:hover a::before {
+  width: 15px;
+  background-color: #f8f8f8;
+}
+
+.menu-container-show {
+  left: 10%;
+  visibility: visible;
+  opacity: 1;
+}
+
+.extend {
+  visibility: visible;
+  width: 80%;
+}
+
+.black-open {
+  transition: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.black-close {
+  transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.page-container {
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+}
+
