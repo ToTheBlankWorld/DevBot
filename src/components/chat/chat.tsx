@@ -39,7 +39,7 @@ type ChatProps = {
   selectedModel?: string
 }
 
-function Chat({ selectedModel = 'llama-3.1-8b-instant' }: ChatProps, ref: React.ForwardedRef<ChatRef>): React.JSX.Element {
+function Chat({ selectedModel = 'openai/gpt-oss-120b' }: ChatProps, ref: React.ForwardedRef<ChatRef>): React.JSX.Element {
   const {
     currentChat,
     currentChatId,

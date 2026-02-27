@@ -17,6 +17,11 @@ export interface ModelOption {
 
 const AVAILABLE_MODELS: ModelOption[] = [
   {
+    id: 'openai/gpt-oss-120b',
+    name: 'OpenAI GPT OSS 120B',
+    provider: 'best reasoning & context'
+  },
+  {
     id: 'llama-3.1-8b-instant',
     name: 'Llama 3.1 8B',
     provider: 'fast + stable'

@@ -28,7 +28,7 @@ function ChatProvider(): React.JSX.Element {
 function ChatExperience(): React.JSX.Element {
   const { chatRef, onCreateChat } = useContext(ChatContext)
   const { closePersonaPanel } = useAppContext()
-  const [selectedModel, setSelectedModel] = useState('llama-3.1-8b-instant')
+  const [selectedModel, setSelectedModel] = useState('openai/gpt-oss-120b')
 
   const handleStartPersonaChat = useCallback(
     (persona: Persona) => {

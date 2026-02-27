@@ -11,7 +11,7 @@ interface HeaderProps {
   onModelChange?: (modelId: string) => void
 }
 
-export function Header({ selectedModel = 'llama-3.1-8b-instant', onModelChange }: HeaderProps): React.JSX.Element {
+export function Header({ selectedModel = 'openai/gpt-oss-120b', onModelChange }: HeaderProps): React.JSX.Element {
   const { toggleSidebar, onToggleSidebar } = useAppContext()
   return (
     <header className="bg-background/95 border-border supports-[backdrop-filter]:bg-background/80 sticky top-0 z-20 w-full border-b pt-[env(safe-area-inset-top)] backdrop-blur-sm">
